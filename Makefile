@@ -6,16 +6,16 @@
 #    By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/05 12:44:28 by nugarcia          #+#    #+#              #
-#    Updated: 2023/04/05 13:00:41 by nugarcia         ###   ########.fr        #
+#    Updated: 2023/04/05 17:32:05 by nugarcia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRCS_NAME =	test.c
+SRCS_NAME =	main.c
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -Imlx -g -fsanitize=address
+CFLAGS = -Imlx -g -fsanitize=address
 MILIB = -I /usr/X11/include -g -L /usr/X11/lib -l minilibx -framework OpenGL -framework AppKit
 
 MLX_LIB_DIR = mlx_linux/
@@ -24,7 +24,7 @@ MLX_INCLUDE = -I mlx_linux/
 LMLX_FLAGS = -L$(MLX_LIB_DIR) -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz -fPIC
 RM = rm -rf
 
-#HEADER = so_long.h
+HEADER = so_long.h
 
 #FT_PRINTF = ./ft_printf/libftprintf.a
 #FT_PRINTF_PATH = ./ft_printf
