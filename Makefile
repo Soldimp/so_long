@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+         #
+#    By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/05 12:44:28 by nugarcia          #+#    #+#              #
-#    Updated: 2023/04/05 17:32:05 by nugarcia         ###   ########.fr        #
+#    Updated: 2023/04/08 14:49:06 by nugarcia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
