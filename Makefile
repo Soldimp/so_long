@@ -6,7 +6,7 @@
 #    By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/05 12:44:28 by nugarcia          #+#    #+#              #
-#    Updated: 2023/04/08 14:49:06 by nugarcia         ###   ########.fr        #
+#    Updated: 2023/04/10 16:48:32 by nugarcia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,39 +29,32 @@ HEADER = so_long.h
 #FT_PRINTF = ./ft_printf/libftprintf.a
 #FT_PRINTF_PATH = ./ft_printf
 
-#LIBFT = ./libft/libft.a
-#LIBFT_PATH = ./libft
+LIBFT = ./ft_libft/libft.a
+LIBFT_PATH = ./ft_libft
 
 INC = -Iincludes -I/usr/include -Imlx_linux
 
-#SRC_PATH = ./src
-
-#OBJ_PATH = ./objects
 
 OBJS = $(SRCS_NAME:.c=.o)
 
-#SRC = $(addprefix $(SRC_PATH)/, $(SRCS_NAME))
 
 all: $(NAME)
 
-$(NAME) : $(OBJS) #$(FT_PRINTF) $(LIBFT) $(OBJS)
+$(NAME) : $(OBJS) $(LIBFT) 
 		make -s -C mlx_linux/
-#		$(CC) $(CFLAGS) $(OBJS) $(FT_PRINTF) $(LIBFT) $(INC) $(LMLX_FLAGS) $(MLX_INCLUDE) -o $(NAME)
-		$(CC) $(CFLAGS) $(OBJS) $(INC) $(LMLX_FLAGS) $(MLX_INCLUDE) -o $(NAME)
-#$(FT_PRINTF): $(shell make -C $(FT_PRINTF_PATH) -q)
-#make -C$(FT_PRINTF_PATH)
+		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(INC) $(LMLX_FLAGS) $(MLX_INCLUDE) -o $(NAME)
 
-#$(LIBFT):  $(shell make -C $(LIBFT_PATH) -q)
-#make -C$(LIBFT_PATH)
+$(LIBFT):  $(shell make -C $(LIBFT_PATH) -q)
+	make -s -C $(LIBFT_PATH)
 
-#$(OBJ_PATH)/%.o : $(SRC_PATH)/%.c $(MLX_LIB)
-#	mkdir -p objects
-	$(CC) -c $(CFLAGS) $(LMLX_FLAGS) $(INC) $(MLX_INCLUDE)  $< -o $@
+		$(CC) -c $(CFLAGS) $(LMLX_FLAGS) $(INC) $(MLX_INCLUDE)  $< -o $@
 
 clean:
+		make clean -s -C $(LIBFT_PATH)
 		rm -rf $(OBJS)
 
 fclean: clean
+		make fclean -s -C $(LIBFT_PATH)
 		rm -f $(NAME)
 
 re: fclean all
