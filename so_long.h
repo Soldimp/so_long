@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:32:50 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/04/10 17:10:05 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/04/11 13:13:39 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct s_data
 	int		p_y;
 	int		counter;
 	int		collected;
+	void	*img;
 	t_map	*map;
 }				t_data;
 

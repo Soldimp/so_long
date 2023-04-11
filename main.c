@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:32:09 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/04/10 17:12:49 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/04/11 13:13:20 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 void	init(t_data *data)
 {
+	
 	data->mlx = mlx_init();
-	data->win = mlx_new_window(data->mlx, 800, 800, "So_Long");
+	data->win = mlx_new_window(data->mlx, 1200, 1200, "So_Long");
+	data->counter = 0;
+	data->img = mlx_xpm_file_to_image(data->mlx, "1.xpm", &data->p_x, &data->p_y);
 	
-	/* data->img = mlx_xpm_file_to_image(data->mlx, "1.xpm", &data->img_width, &vars->img_height);
-	
-	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0); */
+	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 }
 int	close_window(t_data *data)
 {
 	mlx_destroy_window(data->mlx, data->win);
 	exit(0);
 }
-
+	
 int	key_press(int keycode, t_data *data)
 {
 	if (keycode == XK_Escape)
