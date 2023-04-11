@@ -6,7 +6,7 @@
 /*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:32:50 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/04/11 16:03:10 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:53:49 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ typedef struct s_data
 
 
 int	main();
+void	creat_map(t_data *data);
 
 #endif
