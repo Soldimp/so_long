@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+         #
+#    By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/05 12:44:28 by nugarcia          #+#    #+#              #
-#    Updated: 2023/04/10 16:48:32 by nugarcia         ###   ########.fr        #
+#    Updated: 2023/04/11 16:03:47 by nugarcia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ CC = cc
 CFLAGS = -Imlx -g -fsanitize=address
 MILIB = -I /usr/X11/include -g -L /usr/X11/lib -l minilibx -framework OpenGL -framework AppKit
 
-MLX_LIB_DIR = mlx_linux/
-MLX_INCLUDE = -I mlx_linux/
+MLX_LIB_DIR = mlxlinux/
+MLX_INCLUDE = -I mlxlinux/
 
 LMLX_FLAGS = -L$(MLX_LIB_DIR) -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz -fPIC
 RM = rm -rf
@@ -32,7 +32,7 @@ HEADER = so_long.h
 LIBFT = ./ft_libft/libft.a
 LIBFT_PATH = ./ft_libft
 
-INC = -Iincludes -I/usr/include -Imlx_linux
+INC = -Iincludes -I/usr/include -Imlxlinux
 
 
 OBJS = $(SRCS_NAME:.c=.o)
@@ -41,7 +41,7 @@ OBJS = $(SRCS_NAME:.c=.o)
 all: $(NAME)
 
 $(NAME) : $(OBJS) $(LIBFT) 
-		make -s -C mlx_linux/
+		make -s -C mlxlinux/
 		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(INC) $(LMLX_FLAGS) $(MLX_INCLUDE) -o $(NAME)
 
 $(LIBFT):  $(shell make -C $(LIBFT_PATH) -q)

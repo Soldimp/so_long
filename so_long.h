@@ -6,7 +6,7 @@
 /*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:32:50 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/04/11 13:13:39 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:03:10 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include "ft_libft/libft.h"
-# include "mlx_linux/mlx.h"
+# include "mlxlinux/mlx.h"
 # include <X11/keysym.h>
 # include <stdio.h>
 # include <math.h>
