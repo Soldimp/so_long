@@ -3,16 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+         #
+#    By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/05 12:44:28 by nugarcia          #+#    #+#              #
-#    Updated: 2023/04/11 16:03:47 by nugarcia         ###   ########.fr        #
+#    Updated: 2023/04/17 15:57:21 by nugarcia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRCS_NAME =	main.c
+SRCS_NAME =	main.c\
+			get_next_line_utils.c\
+			get_next_line.c\
+			fd_line.c\
+			map.c\
+			put_images.c\
+			struck_init.c
 
 CC = cc
 CFLAGS = -Imlx -g -fsanitize=address
