@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:32:50 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/04/17 15:59:06 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/04/18 17:06:51 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ typedef struct s_img
 	void	*background;
 }				t_img;
 
-
 typedef struct s_map
 {
 	char	**map;
@@ -79,7 +78,7 @@ int		key_press(int keycode, t_data *data);
 
 /********************** MAP **********************************/
 void	window_size(t_data *data, char **av);
-void	creat_map(t_data *data);
+void	creat_map(t_data *data, t_map *map);
 int		ft_line_length(int fd);
 int		ft_count_lines(int fd, int x, int img_w);
 

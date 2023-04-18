@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:11:20 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/04/17 15:58:12 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/04/18 17:15:48 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,28 +29,26 @@ void	window_size(t_data *data, char **av)
 	}
 	data->win_x = (ft_line_length(fd) * IMG_W);
 	data->win_y = (ft_count_lines(fd, data->win_x, IMG_W) * IMG_H);
+	printf("win x: %d\n", data->win_x);
+	printf("win y: %d\n", data->win_y);
 }
 
-void	creat_map(t_data *data)
+void	creat_map(t_data *data, t_map *map)
 {
-	data->map->x = 0;
-	data->map->y = 0;
-	while (data->map->y < (data->win_y / IMG_H))
+	map->map = ft_calloc(data->win_y + 1, sizeof(char **));
+	map->x = 0;
+	map->y = 0;
+	while (map->y < (data->win_y / IMG_H))
 	{
-		if (data->map->map[data->map->y][data->map->x] == 'P')
+		if (map->y == 'P' && map->x == 'P')
 			put_player(data);
-		else if (data->map->map[data->map->y][data->map->x] == '1')
-			put_object(data, "./images/wall.xpm");
-		else if (data->map->map[data->map->y][data->map->x] == 'C')
-			put_object(data, "./images/collectable.xpm");
-		else if (data->map->map[data->map->y][data->map->x] == 'E')
-			put_object(data, "./images/exit.xpm");
-		if (data->map->x < (data->win_x / IMG_W))
-			data->map->x++;
+		
+		if (map->x < (data->win_x / IMG_W))
+			map->x++;
 		else
 		{
-			data->map->y++;
-			data->map->x = 0;
+			map->y++;
+			map->x = 0;
 		}
 	}
 }
