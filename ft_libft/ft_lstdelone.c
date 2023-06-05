@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:37:08 by nugarcia          #+#    #+#             */
-/*   Updated: 2022/11/10 11:44:36 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:35:38 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

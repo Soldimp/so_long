@@ -6,7 +6,7 @@
 /*   By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:27:30 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/04/17 15:27:44 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:02:40 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,3 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-
-/* int main()
-{
-	int fd = 0;
-	char *line;
-	fd = open("./fd.txt", O_RDONLY);
-	while (1)
-	{
-		line = get_next_line(fd);
-		if (line == NULL)
-			break ;
-		printf("%s", line);
-	}
-	free(line);
-	close(fd);
-
-} */

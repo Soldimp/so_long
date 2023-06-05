@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:32:50 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/04/18 17:06:51 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/05/30 16:10:57 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,25 @@
 # include <string.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <stdbool.h>
 
 # define IMG_W 32
 # define IMG_H 32
+
+# define PLAYER_UP "images/ship_up.xpm"
+# define PLAYER_DOWN "images/ship_down.xpm"
+# define PLAYER_LEFT "images/ship_left.xpm"
+# define PLAYER_RIGHT "images/ship_right.xpm"
+# define WALL "images/wall.xpm"
+# define BACKGROUND "images/background.xpm"
+# define COLLECTIBLE "images/collectable.xpm"
+# define EXIT "images/exit.xpm"
+
+# define KEY_UP XK_w 
+# define KEY_DOWN XK_s
+# define KEY_LEFT XK_a
+# define KEY_RIGHT XK_d
+# define KEY_ESC XK_Escape
 
 /********************** GNL **********************************/
 # ifndef BUFFER_SIZE
@@ -38,23 +54,29 @@ int		antioverrite(char *stash);
 
 /********************** STRUCS **********************************/
 
-typedef struct s_img
+typedef struct s_image
 {
-	void	*player_up;
-	void	*player_left;
-	void	*player_right;
-	void	*player_down;
-	void	*background;
-}				t_img;
+	void	*img;
+}				t_image;
 
-typedef struct s_map
+typedef struct s_sp
 {
-	char	**map;
-	void	*object;
-	int		x;
-	int		y;
-	int		coins;
-}				t_map;
+	t_image	player_up;
+	t_image	player_left;
+	t_image	player_right;
+	t_image	player_down;
+	t_image	exit;
+	t_image	background;
+	t_image	wall;
+	t_image	collectable;
+}				t_sp;
+
+typedef struct s_pos
+{
+	int	x;
+	int	y;
+}				t_pos;
+
 
 typedef struct s_data
 {
@@ -62,29 +84,30 @@ typedef struct s_data
 	void	*win;
 	int		win_x;
 	int		win_y;
-	int		pos_x;
-	int		pos_y;
-	int		counter;
-	int		collected;
-	t_img	*img;
-	t_map	*map;
+	int		moves;
 }				t_data;
-/********************** FUNTIONS **********************************/
-void	init(t_data *data, t_map *map);
-int		close_window(t_data *data);
 
+/********************** FUNCTIONS **********************************/
+int				close_window(char **map);
+t_data			*data(void);
+void			print_error(char *msg, char **map);
 /********************** KEYPRESS **********************************/
-int		key_press(int keycode, t_data *data);
+void			*player_key(int key);
+int				key_press(int keycode, char **map);
+void			*collect_exit(char **map);
+t_pos			get_player_pos(char **map);
+/********************** WINDOW **********************************/
+void			window_create(char **map, char **av);
+void			window_load(char **map, int key, int p, int i);
 
 /********************** MAP **********************************/
-void	window_size(t_data *data, char **av);
-void	creat_map(t_data *data, t_map *map);
-int		ft_line_length(int fd);
-int		ft_count_lines(int fd, int x, int img_w);
-
+void 			display_map(t_data *data, char **map);
+char			**map_matrix(char *path, t_list *map_ber);
+int				map_size(char **map, char axis);
+void			map_update(char **map, int key, int x, int y);
+void 			checkmap(char **map);
+void			check_path(char **map, int x, int y);
 /********************** IMG **********************************/
-void	put_background(t_data *data);
-void	put_player(t_data *data);
-void	put_object(t_data *data, char *relative_path);
+t_sp			image_set(void);
 
 #endif
