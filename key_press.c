@@ -6,7 +6,7 @@
 /*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:22:03 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/06/06 11:09:10 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/06 12:07:12 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,18 +77,6 @@ static int	player_collision(char **map, int x, int y)
 	return (0);
 }
 
-void	nor_update(int key)
-{
-	if (key == KEY_UP)
-		printf("moved: %d\n", (*data)()->moves);
-	else if (key == KEY_DOWN)
-		printf("moved: %d\n", (*data)()->moves);
-	else if (key == KEY_LEFT)
-		printf("moved: %d\n", (*data)()->moves);
-	else if (key == KEY_RIGHT)
-		printf("moved: %d\n", (*data)()->moves);
-}
-
 int	key_press(int key, char **map)
 {
 	t_pos		pos;
@@ -105,11 +93,10 @@ int	key_press(int key, char **map)
 		map_update(map, key, pos.x + 1, pos.y);
 	else if (key == KEY_ESC)
 	{
-		ft_putstr_fd("Game Closed\n", 1);
+		ft_printf("Game Closed\n");
 		close_window(map);
 	}
 	else
 		map[pos.y][pos.x] = 'P';
-	nor_update(key);
 	return (0);
 }

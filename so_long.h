@@ -6,7 +6,7 @@
 /*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:32:50 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/06/06 10:56:28 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/06 12:00:03 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include "ft_libft/libft.h"
+# include "ft_printf/ft_printf.h"
 # include "mlxlinux/mlx.h"
 # include <X11/keysym.h>
 # include <stdio.h>
@@ -113,6 +114,7 @@ void	ft_lstclear2(t_list **lst);
 void	ft_lstdelone2(t_list *lst);
 void	print_onscreen(char *msg, int x, int y);
 void	display_move(int move);
+void	nor_update(int key);
 /********************** PATH UTILLS **********************************/
 char	**dup_matrix(char **matrix);
 void	free_matrix(char **matrix);

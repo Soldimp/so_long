@@ -6,7 +6,7 @@
 /*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:11:20 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/06/06 10:52:28 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/06 12:04:43 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,11 +100,12 @@ void	map_update(char **map, int key, int x, int y)
 {
 	if (map[y][x] == 'E')
 	{
-		printf("Game won!!\n");
+		ft_printf("Game won!!\n");
 		close_window(map);
 	}
 	map[y][x] = 'P';
 	window_load(map, key, 0, 0);
 	(*data)()->moves++;
 	display_move((*data)()->moves);
+	nor_update(key);
 }

@@ -6,7 +6,7 @@
 #    By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/05 12:44:28 by nugarcia          #+#    #+#              #
-#    Updated: 2023/06/06 11:39:09 by nugarcia         ###   ########.fr        #
+#    Updated: 2023/06/06 12:06:00 by nugarcia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,9 @@ HEADER = so_long.h
 LIBFT = ./ft_libft/libft.a
 LIBFT_PATH = ./ft_libft
 
+FT_PRINTF = ./ft_printf/libftprintf.a
+FT_PRINTF_PATH = ./ft_printf
+
 INC = -Iincludes -I/usr/include -Imlxlinux
 
 
@@ -49,13 +52,16 @@ OBJS = $(SRCS_NAME:.c=.o)
 
 all: $(NAME)
 
-$(NAME) : $(OBJS) $(LIBFT) 
+$(NAME) : $(OBJS) $(LIBFT) $(FT_PRINTF)
 		make -s -C mlxlinux/
-		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(INC) $(LMLX_FLAGS) $(MLX_INCLUDE) -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(FT_PRINTF) $(INC) $(LMLX_FLAGS) $(MLX_INCLUDE) -o $(NAME)
 
 $(LIBFT):  $(shell make -C $(LIBFT_PATH) -q)
 	make  -s -C $(LIBFT_PATH)
 	make bonus  -s -C $(LIBFT_PATH)
+	
+$(FT_PRINTF):  $(shell make -C $(FT_PRINTF_PATH) -q)
+	make  -s -C $(FT_PRINTF_PATH)
 		$(CC) -c $(CFLAGS) $(LMLX_FLAGS) $(INC) $(MLX_INCLUDE)  $< -o $@
 
 clean:
