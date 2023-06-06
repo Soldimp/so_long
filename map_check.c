@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:55:24 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/05/24 15:52:13 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:51:13 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	rect_or_no(char **map, int y, int x)
 
 static	void	is_map_surrounded(char **map, int y, int x)
 {
-    while (map[y][x] && map[y][x] != '\n')
+	while (map[y][x] && map[y][x] != '\n')
 		if (map[y][x++] != '1')
 			print_error("provided map not surrounded by walls.", map);
 	y++;
@@ -85,11 +85,10 @@ static void	check_other(char **map, int y, int x)
 	check_starting_pos(map, player, exit, collet);
 }
 
-void checkmap(char **map)
+void	checkmap(char **map)
 {
-    rect_or_no(map, 1, 0);
+	rect_or_no(map, 1, 0);
 	is_map_surrounded(map, 0, 0);
 	check_other(map, 1, 0);
 	check_path(map, get_player_pos(map).x, get_player_pos(map).y);
 }
-

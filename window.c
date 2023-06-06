@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:46:46 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/05/30 16:57:00 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/06 11:02:40 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,8 @@ static void	window_set_tile(char **map, int key, int x, int y)
 		mlx_put_image_to_window((*data()).mlx, (*data()).win,
 			image_set().collectable.img, x * IMG_W, y * IMG_H);
 	else if (map[y][x] == 'E')
-		mlx_put_image_to_window((*data()).mlx, (*data()).win, 
-		image_set().exit.img, x * IMG_W, y * IMG_H);
-	
-		
+		mlx_put_image_to_window((*data()).mlx, (*data()).win,
+			image_set().exit.img, x * IMG_W, y * IMG_H);
 }
 
 void	window_load(char **map, int key, int p, int i)
@@ -56,6 +54,6 @@ void	window_create(char **map, char **av)
 			(*data()).win_y * IMG_H, "So Long");
 	window_load(map, KEY_UP, 0, 0);
 	mlx_hook((*data()).win, 2, 1L << 0, key_press, map);
-    mlx_hook((*data()).win, 17, 0L, close_window, map);
-    mlx_loop((*data()).mlx);
+	mlx_hook((*data()).win, 17, 0L, close_window, map);
+	mlx_loop((*data()).mlx);
 }

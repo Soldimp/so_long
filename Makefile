@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+         #
+#    By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/05 12:44:28 by nugarcia          #+#    #+#              #
-#    Updated: 2023/05/31 15:26:30 by nugarcia         ###   ########.fr        #
+#    Updated: 2023/06/06 11:39:09 by nugarcia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,13 @@ SRCS_NAME =	main.c\
 			key_press.c\
 			map_check.c\
 			path_check.c\
+			path_utill.c\
+			utills.c\
 			img.c
 
 CC = cc
 CFLAGS = -Imlx -g
-LDFLAGS = -L /usr/lib/x86_64-linux-gnu
+#LDFLAGS = -L /usr/lib/x86_64-linux-gnu
 #MILIB = -I /usr/X11/include -g -L /usr/X11/lib -l minilibx -framework OpenGL -framework AppKit
 MILIB = -I /usr/X11/include -g -L /usr/X11/lib -l minilibx
 
@@ -49,7 +51,7 @@ all: $(NAME)
 
 $(NAME) : $(OBJS) $(LIBFT) 
 		make -s -C mlxlinux/
-		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(INC) $(LMLX_FLAGS) $(MLX_INCLUDE) $(LDFLAGS) -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(INC) $(LMLX_FLAGS) $(MLX_INCLUDE) -o $(NAME)
 
 $(LIBFT):  $(shell make -C $(LIBFT_PATH) -q)
 	make  -s -C $(LIBFT_PATH)

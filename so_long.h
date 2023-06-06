@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:32:50 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/05/30 16:10:57 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:56:28 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,6 @@ t_pos			get_player_pos(char **map);
 /********************** WINDOW **********************************/
 void			window_create(char **map, char **av);
 void			window_load(char **map, int key, int p, int i);
-
 /********************** MAP **********************************/
 void 			display_map(t_data *data, char **map);
 char			**map_matrix(char *path, t_list *map_ber);
@@ -109,5 +108,12 @@ void 			checkmap(char **map);
 void			check_path(char **map, int x, int y);
 /********************** IMG **********************************/
 t_sp			image_set(void);
-
+/********************** UTILLS **********************************/
+void	ft_lstclear2(t_list **lst);
+void	ft_lstdelone2(t_list *lst);
+void	print_onscreen(char *msg, int x, int y);
+void	display_move(int move);
+/********************** PATH UTILLS **********************************/
+char	**dup_matrix(char **matrix);
+void	free_matrix(char **matrix);
 #endif

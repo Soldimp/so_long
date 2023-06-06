@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:32:09 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/05/30 16:10:45 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:50:03 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_data	*data(void)
 
 int	close_window(char **map)
 {
-	int p;
+	int	p;
 
 	p = 0;
 	mlx_clear_window((*data()).mlx, (*data()).win);
@@ -42,11 +42,10 @@ int	close_window(char **map)
 	exit(0);
 }
 
-
 void	print_error(char *msg, char **map)
 {
 	int	p;
-	
+
 	ft_putstr_fd("Error: ", 2);
 	ft_putstr_fd(msg, 2);
 	ft_putchar_fd('\n', 2);
@@ -60,9 +59,9 @@ void	print_error(char *msg, char **map)
 	exit(1);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-    char	**map;
+	char	**map;
 	t_list	*map_list;
 
 	map = 0;
@@ -74,5 +73,5 @@ int main(int ac, char **av)
 	checkmap(map);
 	window_create(map, av);
 	ft_lstclear(&map_list, free);
-    return (0);
+	return (0);
 }

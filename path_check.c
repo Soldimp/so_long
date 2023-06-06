@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_check.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nugarcia  <nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 15:29:54 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/05/30 16:06:15 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:55:19 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,34 +62,6 @@ static int	find_path_exit(char **tmp, int x, int y)
 	return (exit);
 }
 
-char	**dup_matrix(char **matrix)
-{
-	char	**res;
-	int		p;
-
-	p = 0;
-	while (matrix[p])
-		p++;
-	res = malloc((p + 1) * sizeof(char *));
-	res[p] = NULL;
-	p = 0;
-	while (matrix[p])
-	{
-		res[p] = ft_strdup(matrix[p]);
-		p++;
-	}
-	return (res);
-}
-
-void	free_matrix(char **matrix)
-{
-	int	p;
-
-	p = 0;
-	while (matrix[p])
-		free(matrix[p++]);
-	free(matrix);
-}
 void	check_path(char **map, int x, int y)
 {
 	char	**tmp;
