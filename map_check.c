@@ -6,7 +6,7 @@
 /*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:55:24 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/06/06 10:51:13 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/07 10:51:15 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,20 @@ static	void	is_map_surrounded(char **map, int y, int x)
 {
 	while (map[y][x] && map[y][x] != '\n')
 		if (map[y][x++] != '1')
-			print_error("provided map not surrounded by walls.", map);
+			print_error("Map not surrounded by walls.", map);
 	y++;
 	while (map[y])
 	{
 		x = ft_strlen(map[y]) - 2;
 		if (map[y][0] != '1' || map[y][x] != '1')
-			print_error("provided map not surrounded by walls.", map);
+			print_error("Map not surrounded by walls.", map);
 		y++;
 	}
 	y--;
 	x = 0;
 	while (map[y][x] && map[y][x] != '\n')
 		if (map[y][x++] != '1')
-			print_error("provided map not surrounded by walls.", map);
+			print_error("Map not surrounded by walls.", map);
 }
 
 static void	check_starting_pos(char **map, int player, int exit, int collet)
@@ -77,7 +77,7 @@ static void	check_other(char **map, int y, int x)
 			else if (map[y][x] == 'C')
 				collet++;
 			else if (map[y][x] != '1' && map[y][x] != '0' && map[y][x] != '\n')
-				print_error("invalid object detected in map.", map);
+				print_error("Invalid object detected in map.", map);
 			x++;
 		}
 		y++;

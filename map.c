@@ -6,7 +6,7 @@
 /*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:11:20 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/06/06 12:04:43 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/07 10:51:56 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static t_list	*map_get(char *av)
 		print_error("Failed to read map.", 0);
 	line = get_next_line(fd);
 	if (!line)
-		print_error("provided map is empty.", 0);
+		print_error("Provided map is empty.", 0);
 	while (line)
 	{
 		ft_lstadd_back(&map, ft_lstnew(line));

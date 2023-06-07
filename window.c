@@ -6,7 +6,7 @@
 /*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:46:46 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/06/06 11:02:40 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/07 10:23:21 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	window_load(char **map, int key, int p, int i)
 
 void	window_create(char **map, char **av)
 {
-	(*data()).win_x = map_size(map, 'x');
+	(*data()).win_x = map_size(map, 'x') - 1;
 	(*data()).win_y = map_size(map, 'y');
 	(*data()).mlx = mlx_init();
 	(*data()).win = mlx_new_window((*data()).mlx, (*data()).win_x * IMG_W,
