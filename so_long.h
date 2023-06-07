@@ -6,7 +6,7 @@
 /*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 15:32:50 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/06/06 12:00:03 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/07 11:04:50 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,6 @@
 # define BACKGROUND "images/background.xpm"
 # define COLLECTIBLE "images/collectable.xpm"
 # define EXIT "images/exit.xpm"
-
-# define KEY_UP XK_w 
-# define KEY_DOWN XK_s
-# define KEY_LEFT XK_a
-# define KEY_RIGHT XK_d
-# define KEY_ESC XK_Escape
 
 /********************** GNL **********************************/
 # ifndef BUFFER_SIZE
@@ -78,7 +72,6 @@ typedef struct s_pos
 	int	y;
 }				t_pos;
 
-
 typedef struct s_data
 {
 	void	*mlx;
@@ -89,26 +82,26 @@ typedef struct s_data
 }				t_data;
 
 /********************** FUNCTIONS **********************************/
-int				close_window(char **map);
-t_data			*data(void);
-void			print_error(char *msg, char **map);
+int		close_window(char **map);
+t_data	*data(void);
+void	print_error(char *msg, char **map);
 /********************** KEYPRESS **********************************/
-void			*player_key(int key);
-int				key_press(int keycode, char **map);
-void			*collect_exit(char **map);
-t_pos			get_player_pos(char **map);
+void	*player_key(int key);
+int		key_press(int keycode, char **map);
+void	*collect_exit(char **map);
+t_pos	get_player_pos(char **map);
 /********************** WINDOW **********************************/
-void			window_create(char **map, char **av);
-void			window_load(char **map, int key, int p, int i);
+void	window_create(char **map, char **av);
+void	window_load(char **map, int key, int p, int i);
 /********************** MAP **********************************/
-void 			display_map(t_data *data, char **map);
-char			**map_matrix(char *path, t_list *map_ber);
-int				map_size(char **map, char axis);
-void			map_update(char **map, int key, int x, int y);
-void 			checkmap(char **map);
-void			check_path(char **map, int x, int y);
+void	display_map(t_data *data, char **map);
+char	**map_matrix(char *path, t_list *map_ber);
+int		map_size(char **map, char axis);
+void	map_update(char **map, int key, int x, int y);
+void	checkmap(char **map);
+void	check_path(char **map, int x, int y);
 /********************** IMG **********************************/
-t_sp			image_set(void);
+t_sp	image_set(void);
 /********************** UTILLS **********************************/
 void	ft_lstclear2(t_list **lst);
 void	ft_lstdelone2(t_list *lst);

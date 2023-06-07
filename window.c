@@ -6,7 +6,7 @@
 /*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:46:46 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/06/07 10:23:21 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/07 11:05:12 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	window_create(char **map, char **av)
 	(*data()).mlx = mlx_init();
 	(*data()).win = mlx_new_window((*data()).mlx, (*data()).win_x * IMG_W,
 			(*data()).win_y * IMG_H, "So Long");
-	window_load(map, KEY_UP, 0, 0);
+	window_load(map, XK_w, 0, 0);
 	mlx_hook((*data()).win, 2, 1L << 0, key_press, map);
 	mlx_hook((*data()).win, 17, 0L, close_window, map);
 	mlx_loop((*data()).mlx);

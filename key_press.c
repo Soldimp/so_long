@@ -6,7 +6,7 @@
 /*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:22:03 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/06/06 12:07:12 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/07 11:05:38 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ void	*player_key(int key)
 {
 	static void	*img;
 
-	if (key == KEY_DOWN || !img)
+	if (key == XK_s || !img)
 		img = image_set().player_down.img;
-	else if (key == KEY_UP)
+	else if (key == XK_w)
 		img = image_set().player_up.img;
-	else if (key == KEY_LEFT)
+	else if (key == XK_a)
 		img = image_set().player_left.img;
-	else if (key == KEY_RIGHT)
+	else if (key == XK_d)
 		img = image_set().player_right.img;
 	return (img);
 }
@@ -83,15 +83,15 @@ int	key_press(int key, char **map)
 
 	pos = get_player_pos(map);
 	map[pos.y][pos.x] = '0';
-	if (key == KEY_UP && !player_collision(map, pos.x, pos.y - 1))
+	if (key == XK_w && !player_collision(map, pos.x, pos.y - 1))
 		map_update(map, key, pos.x, pos.y - 1);
-	else if (key == KEY_DOWN && !player_collision(map, pos.x, pos.y + 1))
+	else if (key == XK_s && !player_collision(map, pos.x, pos.y + 1))
 		map_update(map, key, pos.x, pos.y + 1);
-	else if (key == KEY_LEFT && !player_collision(map, pos.x - 1, pos.y))
+	else if (key == XK_a && !player_collision(map, pos.x - 1, pos.y))
 		map_update(map, key, pos.x - 1, pos.y);
-	else if (key == KEY_RIGHT && !player_collision(map, pos.x + 1, pos.y))
+	else if (key == XK_d && !player_collision(map, pos.x + 1, pos.y))
 		map_update(map, key, pos.x + 1, pos.y);
-	else if (key == KEY_ESC)
+	else if (key == XK_Escape)
 	{
 		ft_printf("Game Closed\n");
 		close_window(map);

@@ -6,7 +6,7 @@
 /*   By: nugarcia < nugarcia@student.42lisboa.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:33:35 by nugarcia          #+#    #+#             */
-/*   Updated: 2023/06/06 12:01:14 by nugarcia         ###   ########.fr       */
+/*   Updated: 2023/06/07 11:04:07 by nugarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ void	display_move(int move)
 
 void	nor_update(int key)
 {
-	if (key == KEY_UP)
+	if (key == XK_w)
 		ft_printf("moved: %d\n", (*data)()->moves);
-	else if (key == KEY_DOWN)
+	else if (key == XK_s)
 		ft_printf("moved: %d\n", (*data)()->moves);
-	else if (key == KEY_LEFT)
+	else if (key == XK_a)
 		ft_printf("moved: %d\n", (*data)()->moves);
-	else if (key == KEY_RIGHT)
+	else if (key == XK_d)
 		ft_printf("moved: %d\n", (*data)()->moves);
 }
